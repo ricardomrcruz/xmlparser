@@ -40,6 +40,27 @@ foreach($xml as $object){
 //  | Kerwinn | Cressey | kcresseyrr@paypal.com | Male |
 
 
+// Padded table
+              
+function pad($length, $value){
+    
+    if(strlen($value) < $length){
+        for($i = strlen($value); $i < $length; $i++ ) {
+            $value.=" ";
+        }
+    }
+    return $value;
+    
+}
 
 
+foreach($xml as $object){
+    echo " | ".pad(40, $object->first_name." ".$object->last_name)." | ".pad(40,  $object->email)." | ".pad(10, $object->gender)." | \n";
+}
 
+
+// ex
+//  | Sande Carbonell                          | scarbonellr0@cnbc.com                    | Female     |
+//  | Danya Ashwood                            | dashwoodr1@xinhuanet.com                 | Genderfluid |
+//  | Edlin Vamplus                            | evamplusr2@hp.com                        | Male       |
+//  | Harwell Lucken                           | hluckenr3@yelp.com                       | Male       |
