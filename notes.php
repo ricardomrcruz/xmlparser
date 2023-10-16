@@ -64,3 +64,24 @@ foreach($xml as $object){
 //  | Danya Ashwood                            | dashwoodr1@xinhuanet.com                 | Genderfluid |
 //  | Edlin Vamplus                            | evamplusr2@hp.com                        | Male       |
 //  | Harwell Lucken                           | hluckenr3@yelp.com                       | Male       |
+
+
+
+
+// ......................................
+
+// IN CASE THERES A PARENT ATTRIBUTE in of the objects IN THE XML FILE
+
+// FOR EXAMPLE <BOOKS>
+//                   <BOOK>
+//                             <ID> <ID/>
+//                             <NAME> <NAME/>
+//                             <PIC> <PIC/>
+//                   <BOOK/>
+//             <BOOKS/>
+
+$xml = simplexml_load_file("dataset2.xml") or die('cant load xml');
+
+for($i=0;$i<2;$i++){
+    echo $xml->book[$i]->title['lang'] . "<br>"
+}
