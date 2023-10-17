@@ -83,5 +83,5 @@ foreach($xml as $object){
 $xml = simplexml_load_file("dataset2.xml") or die('cant load xml');
 
 for($i=0;$i<2;$i++){
-    echo $xml->book[$i]->title['lang'] . "<br>"
+    echo $xml->book[$i]->title['lang'] . "<br>";
 }
